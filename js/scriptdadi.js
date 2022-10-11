@@ -5,20 +5,21 @@
 // Che ci sia un array da qualche parte?
 // Se dobbiamo confrontare qualcosa che "cosa" ci serve?
 
-const numerorandom = [];
-const numeriDaGenerare = 1;
-let check = false;
-for (let i = 1; i <= numeriDaGenerare; i++) {
-  let numerogenerato = Math.floor(Math.random() * (6)) 
-  for (let n = 0; n < numerorandom.lenght; n++) {
-    if (numerogenerato == numerorandom[n]) {
-      check = true;
-    }
-  }
+let tiradado = document.getElementById("playdado");
+let risultatoDado = document.getElementById("risultato");
+let risultato = document.createElement("div");
 
-  if (!check) {
-    numerorandom.push(numerogenerato);
-  }
-}
+let playdado = function () {
+  const giocatore = Math.floor(Math.random() * 6 + 1);
+  const cpu = Math.floor(Math.random() * 6 + 1);
 
-console.log(numerorandom);
+  if (giocatore > cpu) {
+    risultato.innerHTML = "Il GIOCATORE vince col numero: " + giocatore;
+  } else if (giocatore < cpu) {
+    risultato.innerHTML = "La CPU vince col numero:  " + cpu;
+  } else {
+    risultato.innerHTML = "Avete pareggiato";
+  }
+};
+tiradado.addEventListener("click", playdado);
+risultatoDado.append(risultato);

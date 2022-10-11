@@ -3,7 +3,6 @@
 // controlla che sia nella lista di chi può accedere,
 // stampa un messaggio appropriato sull’esito del controllo.
 
-
 // 1) mail con array.
 const mailUtenti = ["abc@gmail.com", "def@gmail.com", "ghi@gmail.com"];
 let button = document.getElementById("login");
